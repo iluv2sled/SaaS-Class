@@ -5,16 +5,16 @@ class Class
     attr_reader attr_name+"_history" # create bar_history getter
     class_eval %Q{
       def #{attr_name}= (attr_name)
-        if !@history
-          @history = Array.new
-          @history[0] = nil
+        if !@#{attr_name}_history
+          @#{attr_name}_history = Array.new
+          @#{attr_name}_history[0] = nil
         end
-        @history = @history.push(attr_name)
+        @#{attr_name}_history = @#{attr_name}_history.push(attr_name)
       end
 
-      def #{attr_name+"_history"}
-        return @history
-      end
+# def #{attr_name+"_history"}
+#       return @history
+#     end
     }
   end
 end
