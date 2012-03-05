@@ -4,7 +4,7 @@ class Dessert
     @calories =calories
   end
 
-  def calories
+  def calories?
     @calories
   end
 
@@ -12,7 +12,7 @@ class Dessert
     @calories = calories
   end
 
-  def name
+  def name?
     @name
   end
 
@@ -21,10 +21,10 @@ class Dessert
   end
 
   def healthy?
-    return @calories >= 200
+    return @calories < 200
   end
 
-  def delicious
+  def delicious?
     return true
   end
 end
