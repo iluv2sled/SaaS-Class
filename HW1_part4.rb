@@ -4,7 +4,7 @@ class Dessert
     @calories =calories
   end
 
-  def calories?
+  def calories
     @calories
   end
 
@@ -12,7 +12,7 @@ class Dessert
     @calories = calories
   end
 
-  def name?
+  def name
     @name
   end
 
@@ -52,3 +52,8 @@ class JellyBean < Dessert
   end
 end
 
+d = Dessert.new("cookie", 20)
+puts d.name
+
+d.name = "cake"
+puts d.name
