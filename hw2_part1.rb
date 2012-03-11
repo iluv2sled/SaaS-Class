@@ -30,11 +30,21 @@ class String
   end
 end
 
-#puts "foo".palindrome?
+puts "foo".palindrome?
 
 module Enumerable
   def palindrome?
-    self == self.reverse_each {|v| v}
+    sel = []
+    rev = []
+    self.each do |item|
+      sel.push(item)
+      rev.insert(0, item)
+    end
+
+    return sel == rev
   end
 end
-#puts [1,2,3,2,1].palindrome?
+puts [1,2,3,2,1].palindrome?.inspect
+puts [1,2,3,4,3,2].palindrome?
+puts (1..2).palindrome?
+

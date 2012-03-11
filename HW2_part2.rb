@@ -8,10 +8,13 @@ class CartesianProduct
         @cart << [i,j]
      end 
     end
+    puts @cart.length
   end
 
   def each
-    yield @cart
+    @cart.each do |element|
+      yield element
+    end
   end
 end
 
