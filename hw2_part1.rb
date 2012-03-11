@@ -20,6 +20,21 @@ class Numeric
   end
 end
 
-puts 5.dollars.in(:euros)
-puts 10.euros.in(:rupees)
+#puts 5.dollars.in(:euros)
+#puts 10.euros.in(:rupees)
 
+class String
+  def palindrome?
+    tmp = self.downcase.gsub(/[^a-z]/, "")
+    tmp == tmp.reverse
+  end
+end
+
+#puts "foo".palindrome?
+
+module Enumerable
+  def palindrome?
+    self == self.reverse_each {|v| v}
+  end
+end
+#puts [1,2,3,2,1].palindrome?
